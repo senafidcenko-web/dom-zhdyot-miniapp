@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="theme-color" content="#fffaf7" />
+<meta name="theme-color" content="#FFE4D8" />
 <meta name="description" content="Кошки и собаки, которые ищут дом." />
 <title>Дом ждёт — найдите друга</title>
 <link rel="preconnect" href="https://images.unsplash.com" />
@@ -15,7 +15,7 @@
   <header class="topbar"><a class="brand" href="#home" aria-label="Дом ждёт — главная"><span class="brand-mark">♡</span><span>дом ждёт</span></a><button class="avatar-btn" id="addTop" aria-label="Добавить карточку">＋</button></header>
   <main>
     <section class="view active" id="homeView" aria-labelledby="pageTitle">
-      <div class="intro"><p class="eyebrow">ИХ ИСТОРИЯ МОЖЕТ ИЗМЕНИТЬСЯ</p><h1 id="pageTitle">Кто-то ждёт<br/>именно <em>тебя.</em></h1><p class="intro-copy">Здесь живут те, кому нужен свой человек.</p><p class="demo-note">Демо-карточки: фотографии и контакты приведены для примера.</p></div>
+      <div class="intro"><p class="eyebrow">ДОМ ЖДЁТ</p><h1 id="pageTitle">Найди друга <em>навсегда.</em></h1><p class="intro-copy">Здесь живут те, кому нужен свой человек.</p><p class="demo-note">Демо-карточки: истории и контакты для примера</p></div>
       <div class="filters" aria-label="Фильтр животных"><button class="filter active" data-filter="all">Все <span id="allCount">0</span></button><button class="filter" data-filter="Кошка">Кошки</button><button class="filter" data-filter="Собака">Собаки</button></div>
       <div id="cardStage" class="card-stage"></div>
       <div class="swipe-hint" id="swipeHint">← листайте карточки →</div>
@@ -25,7 +25,7 @@
     <section class="view" id="favoritesView" aria-labelledby="favTitle"><div class="section-heading"><p class="eyebrow">СОХРАНЁННОЕ</p><h1 id="favTitle">Избранное <span class="heading-heart">♡</span></h1><p class="intro-copy">Те, кто запали в сердце.</p></div><div class="pet-grid" id="favoritesGrid"></div><div class="empty-state hidden" id="favoritesEmpty"><span>♡</span><h2>Пока здесь тихо</h2><p>Отметьте понравившихся питомцев сердечком.</p><button class="primary-btn" data-goto="home">Посмотреть животных</button></div></section>
     <section class="view" id="manageView" aria-labelledby="manageTitle"><div class="section-heading"><p class="eyebrow">ВАШИ ПУБЛИКАЦИИ</p><h1 id="manageTitle">Мои карточки</h1><p class="intro-copy">Добавляйте и обновляйте истории животных.</p></div><div class="pet-grid" id="manageGrid"></div><div class="empty-state hidden" id="manageEmpty"><span>✳</span><h2>Карточек ещё нет</h2><p>Добавьте первое животное, которому ищут дом.</p><button class="primary-btn" id="emptyAdd">Добавить карточку</button></div></section>
   </main>
-  <nav class="tabbar" aria-label="Основная навигация"><button class="tab active" data-view="home"><span>⌂</span>Найти дом</button><button class="tab" data-view="favorites"><span>♡</span>Избранное <i id="favBadge" class="badge hidden">0</i></button><button class="tab" data-view="manage"><span>＋</span>Мои карточки</button></nav>
+  <nav class="tabbar" aria-label="Основная навигация"><button class="tab active" data-view="home"><span>♡</span>Анкеты</button><button class="tab" data-view="favorites"><span>♡</span>Избранное <i id="favBadge" class="badge hidden">0</i></button><button class="tab" data-view="manage"><span>＋</span>Мои карточки</button></nav>
 </div>
 <div class="modal-backdrop hidden" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailName"><article class="detail-sheet"><button class="close-btn" data-close aria-label="Закрыть">×</button><div id="detailContent"></div></article></div>
 <div class="modal-backdrop hidden" id="formModal" role="dialog" aria-modal="true" aria-labelledby="formTitle"><form class="form-sheet" id="petForm"><button type="button" class="close-btn" data-close aria-label="Закрыть">×</button><p class="eyebrow">НОВАЯ ИСТОРИЯ</p><h2 id="formTitle">Добавить карточку</h2><input type="hidden" name="id"/><label>Кличка<input name="name" required maxlength="32" placeholder="Например, Луна"/></label><label>Кто это?<select name="type"><option>Кошка</option><option>Собака</option></select></label><label>Фотография питомца<input name="photo" type="file" accept="image/*"/><small class="upload-help">Можно выбрать фото с устройства или вставить ссылку ниже.</small></label><label>Или ссылка на фото<input name="image" type="url" placeholder="https://…"/></label><label>Расскажите о питомце<textarea name="description" required rows="4" maxlength="500" placeholder="Характер, возраст, привычки…"></textarea></label><label>Контакт ответственного<input name="contact" required placeholder="@username или +7…"/></label><p class="form-note">Укажите Telegram @username, номер телефона или ссылку t.me/…</p><button class="primary-btn submit-btn" type="submit">Сохранить карточку</button></form></div>
