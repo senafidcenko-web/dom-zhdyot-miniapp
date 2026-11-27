@@ -7,15 +7,20 @@
 <meta name="description" content="Кошки и собаки, которые ищут дом." />
 <title>Дом ждёт — найдите друга</title>
 <link rel="preconnect" href="https://images.unsplash.com" />
-<link rel="stylesheet" href="styles.css?v=20261127b" />
+<link rel="stylesheet" href="styles.css?v=20261127d" />
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-<div class="app-shell">
+<section class="welcome-screen" id="welcomeScreen" aria-labelledby="welcomeTitle">
+  <a class="welcome-brand" href="#" aria-label="Дом ждёт"><span class="brand-mark">♡</span><span>дом ждёт</span></a>
+  <div class="welcome-copy"><p class="eyebrow">ДОМ ЖДЁТ</p><h1 id="welcomeTitle">Найди друга <em>навсегда.</em></h1><p>Здесь живут те, кому нужен свой человек.</p></div>
+  <button class="primary-btn welcome-cta" id="enterApp">Перейти к анкетам <span aria-hidden="true">→</span></button>
+</section>
+<div class="app-shell hidden">
   <header class="topbar"><a class="brand" href="#home" aria-label="Дом ждёт — главная"><span class="brand-mark">♡</span><span>дом ждёт</span></a><button class="avatar-btn" id="addTop" aria-label="Добавить карточку">＋</button></header>
   <main>
     <section class="view active" id="homeView" aria-labelledby="pageTitle">
-      <div class="intro"><p class="eyebrow">ДОМ ЖДЁТ</p><h1 id="pageTitle">Найди друга <em>навсегда.</em></h1><p class="intro-copy">Здесь живут те, кому нужен свой человек.</p><p class="demo-note">Демо-карточки: истории и контакты для примера</p></div>
+      
       <div class="filters" aria-label="Фильтр животных"><button class="filter active" data-filter="all">Все <span id="allCount">0</span></button><button class="filter" data-filter="Кошка">Кошки</button><button class="filter" data-filter="Собака">Собаки</button></div>
       <div id="cardStage" class="card-stage"></div>
       <div class="swipe-hint" id="swipeHint">← листайте карточки →</div>
@@ -28,7 +33,7 @@
   <nav class="tabbar" aria-label="Основная навигация"><button class="tab active" data-view="home"><span>♡</span>Анкеты</button><button class="tab" data-view="favorites"><span>♡</span>Избранное <i id="favBadge" class="badge hidden">0</i></button><button class="tab" data-view="manage"><span>＋</span>Мои карточки</button></nav>
 </div>
 <div class="modal-backdrop hidden" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailName"><article class="detail-sheet"><button class="close-btn" data-close aria-label="Закрыть">×</button><div id="detailContent"></div></article></div>
-<div class="modal-backdrop hidden" id="formModal" role="dialog" aria-modal="true" aria-labelledby="formTitle"><form class="form-sheet" id="petForm"><button type="button" class="close-btn" data-close aria-label="Закрыть">×</button><p class="eyebrow">НОВАЯ ИСТОРИЯ</p><h2 id="formTitle">Добавить карточку</h2><input type="hidden" name="id"/><label>Кличка<input name="name" required maxlength="32" placeholder="Например, Луна"/></label><label>Кто это?<select name="type"><option>Кошка</option><option>Собака</option></select></label><label>Фотография питомца<input name="photo" type="file" accept="image/*"/><small class="upload-help">Можно выбрать фото с устройства или вставить ссылку ниже.</small></label><label>Или ссылка на фото<input name="image" type="url" placeholder="https://…"/></label><label>Расскажите о питомце<textarea name="description" required rows="4" maxlength="500" placeholder="Характер, возраст, привычки…"></textarea></label><label>Контакт ответственного<input name="contact" required placeholder="@username или +7…"/></label><p class="form-note">Укажите Telegram @username, номер телефона или ссылку t.me/…</p><button class="primary-btn submit-btn" type="submit">Сохранить карточку</button></form></div>
+<div class="modal-backdrop hidden" id="formModal" role="dialog" aria-modal="true" aria-labelledby="formTitle"><form class="form-sheet" id="petForm"><button type="button" class="close-btn" data-close aria-label="Закрыть">×</button><p class="eyebrow">НОВАЯ ИСТОРИЯ</p><h2 id="formTitle">Добавить карточку</h2><input type="hidden" name="id"/><label>Кличка<input name="name" required maxlength="32" placeholder="Например, Луна"/></label><label>Кто это?<select name="type"><option>Кошка</option><option>Собака</option></select></label><label>Фотографии питомца<input name="photo" type="file" accept="image/*" multiple/><small class="upload-help">Можно выбрать несколько фото; точки на карточке переключают их.</small></label><label>Или ссылка на фото<input name="image" type="url" placeholder="https://…"/></label><label>Расскажите о питомце<textarea name="description" required rows="4" maxlength="500" placeholder="Характер, возраст, привычки…"></textarea></label><label>Контакт ответственного<input name="contact" required placeholder="@username или +7…"/></label><p class="form-note">Укажите Telegram @username, номер телефона или ссылку t.me/…</p><button class="primary-btn submit-btn" type="submit">Сохранить карточку</button></form></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="app.js"></script>
 </body></html>
