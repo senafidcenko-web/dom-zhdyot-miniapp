@@ -64,3 +64,5 @@ body,.app-shell{height:var(--tg-vh,var(--app-vh))}
 .photo-pager{display:none!important}
 .photo-count{position:absolute;z-index:3;top:18px;left:50%;transform:translateX(-50%);padding:7px 12px;border-radius:99px;background:rgba(36,58,102,.32);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);color:#fff;font-size:12px;font-weight:700;letter-spacing:.5px;text-shadow:0 1px 4px #0007;pointer-events:none}
 .pet-photo[role="button"]{cursor:pointer}
+.welcome-note{display:block;margin:16px auto 0;color:var(--muted);font-size:12px;line-height:1.4;opacity:.85}
+@media(max-width:599px){.welcome-note{font-size:11px;margin-top:12px}}
